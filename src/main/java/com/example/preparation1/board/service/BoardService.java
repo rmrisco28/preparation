@@ -1,9 +1,9 @@
-package com.example.preparation1.service;
+package com.example.preparation1.board.service;
 
-import com.example.preparation1.dto.BoardForm;
-import com.example.preparation1.entity.Board;
+import com.example.preparation1.board.dto.BoardForm;
+import com.example.preparation1.board.entity.Board;
 
-import com.example.preparation1.repository.BoardRepository;
+import com.example.preparation1.board.repository.BoardRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

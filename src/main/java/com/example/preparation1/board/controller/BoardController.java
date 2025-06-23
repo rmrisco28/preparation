@@ -1,7 +1,7 @@
-package com.example.preparation1.controller;
+package com.example.preparation1.board.controller;
 
-import com.example.preparation1.dto.BoardForm;
-import com.example.preparation1.service.BoardService;
+import com.example.preparation1.board.dto.BoardForm;
+import com.example.preparation1.board.service.BoardService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,11 +20,12 @@ public class BoardController {
         return "pre/write";
     }
 
-    
+
     @PostMapping("write")
     public String writePost(BoardForm data) {
         boardService.add(data);
 
         return "pre/write";
     }
+
 }

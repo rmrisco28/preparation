@@ -1,6 +1,7 @@
 CREATE DATABASE pre;
 USE pre;
 
+# 테이블
 CREATE TABLE board
 (
     id         INT AUTO_INCREMENT NOT NULL,
@@ -11,6 +12,7 @@ CREATE TABLE board
     CONSTRAINT pk_board PRIMARY KEY (id)
 );
 
+# 사용자
 CREATE TABLE member
 (
     id       VARCHAR(255) NOT NULL,
@@ -19,3 +21,5 @@ CREATE TABLE member
     phone    VARCHAR(255) NOT NULL,
     CONSTRAINT pk_member PRIMARY KEY (id)
 );
+
+SHOW DATABASES;

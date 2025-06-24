@@ -1,7 +1,7 @@
 package com.example.preparation1.board.controller;
 
-import com.example.preparation1.board.dto.BoardForm;
-import com.example.preparation1.board.service.BoardService;
+import com.example.preparation1.board.entity.Board;
+import com.example.preparation1.board.repository.BoardRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,22 +10,26 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequiredArgsConstructor
-@RequestMapping("pre")
+@RequestMapping("board")
 public class BoardController {
 
-    private final BoardService boardService;
+    private final BoardRepository boardRepository;
 
     @GetMapping("write")
     public String write() {
-        return "pre/write";
-    }
 
+        return "board/write";
+    }
 
     @PostMapping("write")
-    public String writePost(BoardForm data) {
-        boardService.add(data);
-
-        return "pre/write";
+    public String writePost(Board board) {
+        board.setTitle();
+        boardRepository.save(board);
+        return "board/write";
     }
 
+    @GetMapping("list")
+    public String list() {
+        return "board/list";
+    }
 }

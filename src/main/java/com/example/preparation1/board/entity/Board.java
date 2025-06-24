@@ -16,12 +16,11 @@ public class Board {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
+    
     private String title;
     private String content;
     private String author;
-
-    @Column(name = "create_at", insertable = false, updatable = false)
-    private LocalDateTime createdAt;
+    private LocalDateTime createdDate;
+    private LocalDateTime modifiedDate;
 
 }
